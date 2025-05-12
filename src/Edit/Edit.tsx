@@ -52,7 +52,6 @@ const Edit = () => {
 
   return (
     <div className="edit-video-wrapper">
-      {/* Flying emojis */}
       {flyingEmojis.map((emoji, i) => (
         <motion.div
           key={i}
@@ -66,7 +65,6 @@ const Edit = () => {
         </motion.div>
       ))}
 
-      {/* Video player */}
       <motion.div
         className="video-player-container"
         initial={{ opacity: 0 }}
@@ -76,14 +74,13 @@ const Edit = () => {
         <video
           ref={videoRef}
           onTimeUpdate={handleTimeUpdate}
-          className="anime-video"
+          className="anime-video landscape"
           src={edit}
           poster="/video-cover.jpg"
           autoPlay
           playsInline
         />
 
-        {/* Custom Controls */}
         <motion.div
           className="video-controls"
           initial={{ opacity: 1 }}
@@ -114,13 +111,18 @@ const Edit = () => {
         </motion.div>
       </motion.div>
 
-      {/* Next Button */}
       <motion.div
         className="next-btn"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
       >
-        <img src="https://media.tenor.com/d2j7YdyhtmsAAAAj/shikanoko-dance-shikanoko-meme.gif" alt="Next" onClick={()=>{navigate('/last')}} />
+        <img
+          src="https://media.tenor.com/d2j7YdyhtmsAAAAj/shikanoko-dance-shikanoko-meme.gif"
+          alt="Next"
+          onClick={() => {
+            navigate('/last');
+          }}
+        />
       </motion.div>
     </div>
   );
