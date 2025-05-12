@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import SwipeSlider from './SwipeSlider';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import BirthdayPopup from './BirthdayPopup';
 
 function generateStars(count = 50) {
   const stars = [];
