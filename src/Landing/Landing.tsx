@@ -4,8 +4,7 @@ import { motion } from 'framer-motion';
 import SwipeSlider from './SwipeSlider';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import Music from '../Music/Music';
-import music from './stephen-sanchez-until-i-found-you-piano-cover-by-pianella-piano_c3CHF8fk.mp3'
+import BirthdayPopup from './BirthdayPopup';
 
 function generateStars(count = 50) {
   const stars = [];
@@ -48,24 +47,29 @@ function generateStars(count = 50) {
 
 function AgeTimer() {
   const [age, setAge] = useState<string>('Loading...');
-  const birthDate: Date = new Date('2004-05-13T00:00:00Z');
+  const birthDate = new Date('2004-05-13T00:00:00Z');
 
   function calculateAge() {
     const now = new Date();
-    const diff: number = now.getTime() - birthDate.getTime();
 
-    const totalSeconds = Math.floor(diff / 1000);
-    const totalMinutes = Math.floor(totalSeconds / 60);
-    const totalHours = Math.floor(totalMinutes / 60);
-    const totalDays = Math.floor(totalHours / 24);
-    const totalMonths = Math.floor(totalDays / 30.44);
-    const years = Math.floor(totalMonths / 12);
+    let years = now.getFullYear() - birthDate.getFullYear();
+    let months = now.getMonth() - birthDate.getMonth();
+    let days = now.getDate() - birthDate.getDate();
 
-    const months = totalMonths % 12;
-    const days = Math.floor(totalDays % 30.44);
-    const hours = totalHours % 24;
-    const minutes = totalMinutes % 60;
-    const seconds = totalSeconds % 60;
+    if (days < 0) {
+      months -= 1;
+      const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+      days += prevMonth.getDate();
+    }
+
+    if (months < 0) {
+      years -= 1;
+      months += 12;
+    }
+
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+    const seconds = now.getSeconds();
 
     setAge(
       `♡ ${years} years - ${months} months - ${days} days 🕯 ` +
@@ -91,6 +95,22 @@ function AgeTimer() {
   );
 }
 
+// const [dynamicBirth, setDynamicBirth] = useState<string | null>(null);
+
+//   useEffect(() => {
+//     const now = new Date();
+//     const fake = new Date(
+//       now.getFullYear() - 21,
+//       now.getMonth(),
+//       now.getDate(),
+//       now.getHours(),
+//       now.getMinutes(),
+//       now.getSeconds() + 10
+//     );
+//     setDynamicBirth(fake.toISOString());
+//   }, []);
+
+
 function Landing() {
   const navigate = useNavigate();
   
@@ -104,7 +124,13 @@ function Landing() {
         <span className="main-title">Afrin Tharun</span>
         <AgeTimer />
         <SwipeSlider onSwipe={handleSlide}/>
-        <Music audioSrc={music}/>
+        {/* <BirthdayPopup birthDateStr={fakeBirth.toISOString()} />
+         */}
+         {/* {dynamicBirth && <BirthdayPopup birthDateStr={dynamicBirth} />} */}
+
+         {/* {dynamicBirth && <BirthdayPopup birthDateStr={dynamicBirth} />} */}
+
+
       </div>
       <div className="stars-wrapper">{generateStars(80)}</div>
     </div>

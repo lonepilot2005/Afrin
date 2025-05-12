@@ -2,13 +2,14 @@
   position: relative;
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(to bottom, #3a0ca3, #03045e);
+  background: linear-gradient(180deg, #FFB5A7 0%, #F9D8D6 40%, #D4B9A0 80%, #FFF4E6 100%);
+  color: #333;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #ffd6a5;
+  top: -50px;
 }
 
 .heart {
@@ -25,7 +26,6 @@
   font-size: 1.5rem;
   pointer-events: none;
 }
-
 
 .heart::before,
 .heart::after {
@@ -59,17 +59,17 @@
 .farewell-text {
   font-size: 2.5rem;
   text-align: center;
-  color: #ffd6a5;
-  text-shadow: 0 0 10px rgba(255, 214, 165, 0.6);
+  color: #ff6f61; /* Soft coral color */
+  text-shadow: 0 0 10px rgba(255, 107, 97, 0.6); /* Soft glowing effect */
 }
 
 .subtext {
   font-size: 1.2rem;
   margin-top: 10px;
-  color: #ffb703;
-  text-shadow: 0 0 5px rgba(255, 183, 3, 0.4);
+  color: #642b00; /* Light golden color */
+  text-shadow: 0 0 5px rgba(241, 198, 164, 0.4); /* Soft glowing effect */
+  text-align: center;
 }
-
 
 @media (max-width: 600px) {
   .farewell-text {

@@ -62,7 +62,7 @@ function Last() {
         animate={{ scale: 1, opacity: 1 }}
         transition={{ delay: 1, duration: 1.5 }}
       >
-        Thank You for Being My Forever 💞
+       My Forever Love ❤️
       </motion.h1>
 
       <motion.p
@@ -71,7 +71,8 @@ function Last() {
         animate={{ opacity: 1 }}
         transition={{ delay: 2.5, duration: 1.5 }}
       >
-        Here's to us, always. 🌙✨
+        Every moment with you writes a new chapter in<br/> the story I never want to end...
+ 🌙✨
       </motion.p>
     </motion.div>
   );

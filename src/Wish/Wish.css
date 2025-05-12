@@ -1,4 +1,3 @@
-/* Wish.css */
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Josefin+Sans:wght@400;700&display=swap');
 
 .wish-container {
@@ -8,16 +7,26 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(135deg, #fff5f5 0%, #ffecec 100%);
   font-family: "Josefin Sans", sans-serif;
   position: relative;
   padding-bottom: 100px;
+   background: linear-gradient(180deg, #ffd6e0 0%, #ffb3c6 100%);
+
 }
+
+.wish-top {
+  width: 100%;
+  padding: 2rem 1rem 1rem;
+  text-align: center;
+  z-index: 1;
+  margin-top: 20px;
+}
+
 
 .floating-hearts {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 30px;
+  left: 30px;
   width: 100%;
   height: 100%;
   pointer-events: none;
@@ -31,13 +40,6 @@
   will-change: transform;
 }
 
-.wish-top {
-  width: 100%;
-  padding: 2rem 1rem 1rem;
-  text-align: center;
-  z-index: 1;
-  margin-top: 20px;
-}
 
 .romantic-wish {
   font-size: 2rem;
@@ -52,12 +54,16 @@
   color: #666;
   font-style: italic;
   margin-top: 10px;
+
 }
 
 .wish-down {
   width: 100%;
   flex: 1;
-  background: linear-gradient(180deg, #ffd6e0 0%, #ffb3c6 100%);
+  /* background: linear-gradient(180deg, #ffd6e0 0%, #ffb3c6 100%);
+  D6A1D5 */
+
+  background-color: #D6A1D5;
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
   display: flex;
@@ -72,17 +78,20 @@
 
 .photo-section {
   width: 250px;
-  height: 250px;
+  height: 150px;
   border: 3px solid white;
   border-radius: 20px;
-  background-color: #fff;
+  /* margin-top: 30px; */
   display: flex;
   justify-content: center;
+  flex-direction: row ;
   align-items: center;
   cursor: pointer;
   overflow: hidden;
   position: relative;
   box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  top: 230px;
+  right: 60px;
 }
 
 .main-photo {
@@ -106,16 +115,17 @@
 .photo-grid-popup {
   position: fixed;
   top: 5%;
-  left: 5%;
-  width: 90vw;
-  height: 80vh;
+  left: 9%;
+  transform: translateX(-50%);
+  width: 70vw;
+  height: 70vh;
   background: white;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
   z-index: 999;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   padding: 1rem;
   overflow: hidden;
 }
@@ -144,10 +154,10 @@
 .close-popup {
   background: #ff6b8b;
   border: none;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: white;
   cursor: pointer;
   position: absolute;
@@ -163,9 +173,11 @@
 .bottom-heart {
   position: fixed;
   bottom: 30px;
-  left: 50%;
+  left: 20%;
   transform: translateX(-50%);
-  background: #ff6b8b;
+  /* background: #ff6b8b; */
+  background-color: #D6A1D5;
+
   color: white;
   border: none;
   border-radius: 50%;
@@ -178,64 +190,113 @@
   align-items: center;
   justify-content: center;
   z-index: 10;
+
+
+}
+
+/* .heart-pulse {
+  position: absolute;
+  width:70px;
+  height: 35px;
+  background: transparent;
+  z-index: -1;
+  border-radius: 50%;
+} */
+
+.romantic-note {
+  max-width: 600px;
+  margin-bottom: 2rem;
+  font-family: 'Dancing Script', cursive;
+  color: #fff8f8;
+  font-size: 1.2rem;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(255, 100, 200, 0.4);
+  line-height: 1.6;
+  margin-left: 30px;
+}
+
+.signature {
+  font-size: 1.3rem;
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.photo-grid-popup.dark-bg {
+  /* background: rgba(0, 0, 0, 0.85); */
+background-color: transparent;
+  backdrop-filter: blur(6px);
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+
+.photo-scroll-container.swipe-enabled {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  scroll-snap-type: x mandatory;
+}
+
+.photo-scroll-container.swipe-enabled img {
+  scroll-snap-align: center;
+  border-radius: 12px;
+}
+
+.floating-heart {
+  font-size: 2rem;
+  position: absolute;
+  z-index: 1;
+}
+
+.hover-msg {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+  pointer-events: none;
+}
+
+.close-popup {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 2rem;
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.bottom-heart {
+
+  width: 30px;
+  height: 30px;
+  font-size: 2.5rem;
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 20px;
+  z-index: 10;
 }
 
 .heart-pulse {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: #ff6b8b;
-  border-radius: 50%;
-  z-index: -1;
+  display: block;
+  margin-left: 8px;
+  animation: pulse 1.5s ease-out infinite;
 }
 
-/* Media Queries */
-@media (max-width: 480px) {
-  .wish-top {
-    padding: 1.5rem 1rem 0.5rem;
-  }
-  
-  .romantic-wish {
-    font-size: 1.6rem;
-  }
-  
-  .top-message {
-    font-size: 1rem;
-  }
-  
-  .photo-section {
-    width: 200px;
-    height: 200px;
-  }
-  
-  .hover-msg {
-    font-size: 0.9rem;
-    padding: 0.4rem 0.8rem;
-  }
-  
-  .photo-grid-popup {
-    top: 2%;
-    height: 85vh;
-  }
-  
-  .gallery-photo {
-    height: 85%;
-  }
-  
-  .bottom-heart {
-    width: 60px;
-    height: 60px;
-    font-size: 1.8rem;
-  }
-}
-
-@media (max-width: 360px) {
-  .romantic-wish {
-    font-size: 1.4rem;
-  }
-  
-  .photo-section {
-    width: 180px;
-    height: 180px;
-  }
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
 }
