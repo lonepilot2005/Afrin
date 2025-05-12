@@ -1,0 +1,31 @@
+.music-player {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+
+  width: 130px;
+  height: 130px;
+}
+
+.disc {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  font-size: 2rem;
+  background: radial-gradient(circle at center, #fff 40%, #d63384 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+}
+
+.rotate {
+  animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

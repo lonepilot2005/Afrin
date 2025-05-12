@@ -1,0 +1,131 @@
+.wish-container {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  font-family: "Josefin Sans", sans-serif;
+  position: relative;
+}
+
+.wish-top {
+  width: 100%;
+  padding: 2rem 1rem 1rem;
+  text-align: center;
+}
+
+.romantic-wish {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(90deg, #ffffff, #ff69b4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.top-message {
+  font-size: 1rem;
+  color: #555;
+}
+
+.wish-down {
+  width: 100%;
+  flex: 1;
+  background-color: rgb(149, 205, 225);
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  position: relative;
+}
+
+.photo-section {
+  width: 200px;
+  height: 200px;
+  border: 2px dashed white;
+  border-radius: 10px;
+  background-color: #fff;
+  background-image: url("./1.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.hover-msg {
+  font-size: 1rem;
+  color: #999;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+}
+
+.photo-grid-popup {
+  position: fixed;
+  top: 10%;
+  left: 10%;
+  width: 80vw;
+  height: 80vh;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 1rem;
+}
+
+.photo-scroll-container {
+  flex: 1;
+  display: flex;
+  overflow-x: auto;
+  width: 100%;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.gallery-photo {
+  height: 100%;
+  max-height: 100%;
+  width: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.close-popup {
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  color: #999;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+.bottom-heart {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ff69b4;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.8rem;
+  width: 60px;
+  height: 60px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}

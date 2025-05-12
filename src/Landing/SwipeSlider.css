@@ -1,0 +1,98 @@
+.slider-wrapper {
+  margin-top: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider-track {
+  position: relative;
+  width: 420px;
+  height: 55px;
+  background: linear-gradient(to right, #f8f9fa, #e3e3e3);
+  border-radius: 999px;
+  box-shadow: 0 0 10px rgba(100, 100, 255, 0.2);
+  overflow: hidden;
+}
+
+.slider-fill {
+  position: absolute;
+  height: 100%;
+  background: linear-gradient(to right, #d67bff, #ff99cc);
+  border-radius: 999px 0 0 999px;
+  z-index: 1;
+  pointer-events: none;
+  left: 0;
+  top: 0;
+  width: 0%; /* This will be set dynamically */
+}
+
+.slider-thumb {
+  position: relative;
+  z-index: 2;
+  width: 80px;
+  height: 100%;
+  background: white;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  cursor: grab;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  user-select: none;
+  color: #8b008b;
+  transition: background-color 0.2s ease;
+}
+
+.slider-thumb:active {
+  cursor: grabbing;
+  background-color: #f0f0f0;
+}
+
+.slider-text {
+  position: absolute;
+  top: 50%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  color: #666;
+  font-size: 14px;
+  pointer-events: none;
+}
+
+/* --------------------------- */
+/* 🌐 Responsive Adjustments */
+/* --------------------------- */
+@media (max-width: 768px) {
+  .slider-track {
+    width: 300px;
+    height: 50px;
+  }
+
+  .slider-thumb {
+    width: 70px;
+    font-size: 14px;
+  }
+
+  .slider-text {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slider-track {
+    width: 240px;
+    height: 45px;
+  }
+
+  .slider-thumb {
+    width: 60px;
+    font-size: 13px;
+  }
+
+  .slider-text {
+    font-size: 12px;
+  }
+}
