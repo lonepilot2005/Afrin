@@ -1,12 +1,18 @@
-import React, { useRef, useState } from 'react';
+import  { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import './Music.css'
+import './Music.css';
 
-const Music = ({ audioSrc }) => {
-  const audioRef = useRef(null);
+type MusicProps = {
+  audioSrc: string;
+};
+
+const Music = ({ audioSrc }: MusicProps) => {
+  const audioRef = useRef<HTMLAudioElement | null>(null);
   const [playing, setPlaying] = useState(false);
 
   const togglePlay = () => {
+    if (!audioRef.current) return;
+
     if (playing) {
       audioRef.current.pause();
     } else {

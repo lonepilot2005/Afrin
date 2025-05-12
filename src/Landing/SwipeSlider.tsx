@@ -1,23 +1,25 @@
-import { motion, useMotionValue, useTransform } from 'framer-motion';
+import { motion, useMotionValue, useTransform, type PanInfo } from 'framer-motion';
 import './SwipeSlider.css';
 
-function SwipeSlider({ onSwipe }) {
+type SwipeSliderProps = {
+  onSwipe: () => void;
+};
+
+function SwipeSlider({ onSwipe }: SwipeSliderProps) {
   const x = useMotionValue(0);
   const fillWidth = useTransform(x, [0, 220], ['0%', '100%']);
 
-  const handleDragEnd = (_, info) => {
+  const handleDragEnd = (_: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
     if (info.point.x > 180) {
-      onSwipe(); // Trigger the page change
+      onSwipe();
     }
   };
 
   return (
     <div className="slider-wrapper">
       <motion.div className="slider-track">
-        {/* Filling background */}
         <motion.div className="slider-fill" style={{ width: fillWidth }} />
 
-        {/* Draggable slider thumb */}
         <motion.div
           className="slider-thumb"
           drag="x"

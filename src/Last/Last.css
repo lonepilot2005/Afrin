@@ -2,77 +2,94 @@
   position: relative;
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(180deg, #fdeff9 0%, #ec38bc 100%);
+  background: linear-gradient(to bottom, #3a0ca3, #03045e);
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  overflow: hidden;
-  text-align: center;
-  font-family: "Josefin Sans", sans-serif;
+  justify-content: center;
+  color: #ffd6a5;
 }
 
-/* Gradient farewell text */
-.farewell-text {
-  font-size: 3rem;
-  background: linear-gradient(90deg, #ff758c, #ff7eb3);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-  margin-bottom: 1rem;
-  z-index: 2;
-}
-
-/* Subtext message */
-.subtext {
-  font-size: 1.2rem;
-  color: #ffffff;
-  z-index: 2;
-}
-
-/* Floating heart icon */
 .heart {
   position: absolute;
-  width: 24px;
-  height: 24px;
-  background: url('/heart.svg') no-repeat center center;
-  background-size: contain;
-  opacity: 0.6;
-  z-index: 1;
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle, #ff9f1c, #ffbf69);
+  border-radius: 50% 50% 0 0;
+  transform: rotate(-45deg);
+  box-shadow: 0 0 15px rgba(255, 191, 105, 0.8);
 }
 
-/* -------------------------- */
-/* 🌐 Responsive Media Queries */
-/* -------------------------- */
+.heart-emoji {
+  font-size: 1.5rem;
+  pointer-events: none;
+}
 
-@media (max-width: 768px) {
+
+.heart::before,
+.heart::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: inherit;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -10px;
+  left: 0;
+}
+
+.heart::after {
+  left: -10px;
+  top: 0;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0;
+}
+
+.farewell-text {
+  font-size: 2.5rem;
+  text-align: center;
+  color: #ffd6a5;
+  text-shadow: 0 0 10px rgba(255, 214, 165, 0.6);
+}
+
+.subtext {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: #ffb703;
+  text-shadow: 0 0 5px rgba(255, 183, 3, 0.4);
+}
+
+
+@media (max-width: 600px) {
   .farewell-text {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
+    padding: 0 1rem;
   }
 
   .subtext {
     font-size: 1rem;
-  }
-
-  .heart {
-    width: 20px;
-    height: 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .farewell-text {
-    font-size: 1.8rem;
-  }
-
-  .subtext {
-    font-size: 0.95rem;
     padding: 0 1rem;
   }
 
   .heart {
-    width: 18px;
-    height: 18px;
+    width: 14px;
+    height: 14px;
+  }
+
+  .heart::before,
+  .heart::after {
+    width: 14px;
+    height: 14px;
   }
 }

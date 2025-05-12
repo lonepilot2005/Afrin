@@ -1,11 +1,11 @@
 import './Landing.css';
 import flake from './flakes.svg';
 import { motion } from 'framer-motion';
-import Song from './song1.m4a'
 import SwipeSlider from './SwipeSlider';
-import Music from '../Music/Music'
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import Music from '../Music/Music';
+import music from './stephen-sanchez-until-i-found-you-piano-cover-by-pianella-piano_c3CHF8fk.mp3'
 
 function generateStars(count = 50) {
   const stars = [];
@@ -47,13 +47,12 @@ function generateStars(count = 50) {
 }
 
 function AgeTimer() {
-  const [age, setAge] = useState('Loading...');
-
-  const birthDate = new Date('2004-05-13T00:00:00Z');
+  const [age, setAge] = useState<string>('Loading...');
+  const birthDate: Date = new Date('2004-05-13T00:00:00Z');
 
   function calculateAge() {
     const now = new Date();
-    const diff = now - birthDate;
+    const diff: number = now.getTime() - birthDate.getTime();
 
     const totalSeconds = Math.floor(diff / 1000);
     const totalMinutes = Math.floor(totalSeconds / 60);
@@ -63,17 +62,15 @@ function AgeTimer() {
     const years = Math.floor(totalMonths / 12);
 
     const months = totalMonths % 12;
-    const days = totalDays % 30;
+    const days = Math.floor(totalDays % 30.44);
     const hours = totalHours % 24;
     const minutes = totalMinutes % 60;
     const seconds = totalSeconds % 60;
 
-setAge(
-  `♡ ${years} years - ${months} months - ${days} days 🕯 ` +
-  `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`
-);
-
-
+    setAge(
+      `♡ ${years} years - ${months} months - ${days} days 🕯 ` +
+      `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`
+    );
   }
 
   useEffect(() => {
@@ -94,16 +91,12 @@ setAge(
   );
 }
 
-
-
-
 function Landing() {
-
-    const navigate = useNavigate()
-    const handleSlide = ()=>{
-        navigate('/wish')
-    }
-
+  const navigate = useNavigate();
+  
+  const handleSlide = () => {
+    navigate('/wish');
+  }
 
   return (
     <div className="main-container">
@@ -111,7 +104,7 @@ function Landing() {
         <span className="main-title">Afrin Tharun</span>
         <AgeTimer />
         <SwipeSlider onSwipe={handleSlide}/>
-        {/* <Music audioSrc={Song}/> */}
+        <Music audioSrc={music}/>
       </div>
       <div className="stars-wrapper">{generateStars(80)}</div>
     </div>

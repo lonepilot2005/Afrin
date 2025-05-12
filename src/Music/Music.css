@@ -2,15 +2,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 2rem;
-
-  width: 130px;
-  height: 130px;
+  width: 50px;
+  height: 50px;
 }
 
-.disc {
-  width: 200px;
-  height: 200px;
+/* .disc {
+  width: 100px;
+  height:100px;
   border-radius: 50%;
   font-size: 2rem;
   background: radial-gradient(circle at center, #fff 40%, #d63384 100%);
@@ -19,7 +17,7 @@
   align-items: center;
   cursor: pointer;
   box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
-}
+} */
 
 .rotate {
   animation: spin 4s linear infinite;
